@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ejercicio</title>
+	<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	
+	<div class = "tit1"></div>
+	 
+	<form>
+		<label name="first_name_label" >First name:</label>
+		<br>
+		<input type="text" name="firstname" value="ingrese" id = "primerNombre">
+		<br>
+		Last name:
+		<br>
+		<input type="text" name="lastname">
+		<br>
+		<label name="labelMail" >E-mail:</label> <br>
+		<div class="mail"></div> <br>
+		<div class = 'genName'></div> <br> 
+		<input type="radio" name="sex" value="male" checked>Male
+		<br>
+		<input type="radio" name="sex" value="female">Female
+		<br>
+		Favorite day of the week:
+		<br>
+		    <select name="fav_day" id= "diaSemana">
+		        <option value="Friday">Friday</option>
+		        <option value="Saturday">Saturday</option>
+		        <option value="Monday">Monday</option>
+		    </select>
+		<br>
+		
+	</form>
+
+	<br><br>
+
+	<div class= "tit2"></div> 
+	    
+	<form>
+	What's your major:
+		<br>
+		<input type="text" name="major">
+		<br>
+		What's your job title:
+		<br>
+		<input type="text" name="job_title">
+		<br>
+
+		Do you like challenges:
+		<br>
+		<input type="radio" name="challenge" value="yes" checked>Yes
+		<br>
+		<input type="radio" name="challenge" value="no">No
+	</form>
+
+	 
+	
+	<script>
+		  
+		 
+
+	  	$('[name = "firstname"]').attr("value"); //recupera el valor
+
+	    $('[name = "firstname"]').attr("value", "javiera"); //cambia valor por otro 
+ 
+	  	jQuery("select[name = 'fav_day'] option[value='Monday']").attr("selected", "selected");
+		  //cambia la opción por defecto a 'Monday' 
+
+	  	$('[name = "first_name_label"]').text('Tu nombre'); 
+		  //cambia el label de 'First name' a 'Tu nombre' 
+		   
+	  	$('[name = "fav_day"]').attr('name');
+		  //Obtiene el valor del atibuto "name" del campo Favorite Day Of The Week
+
+ 	    $('[value = "female"]').attr('checked', true);
+		  //Escoge la opción Female de la pregunta de género
+
+	 	$("form:eq(0)").attr('name', 'personal_info');
+		  /*Encuentra la primera etiqueta form del documento y pone el atributo name=personal_info*/
+
+		$("form:eq(1)").attr('name', 'job_info'); 
+		  /*Encuentra la segunda etiqueta form del documento y pon el 
+		  atributo name = job_info */
+
+		$( ".tit1").append('<h1>Entrevista personal</h1>'); 
+		$( ".tit2").append('<h1>Entrevista de trabajo</h1>');  
+		  /* Agrega un título h1 a cada una de las formas que diga 'Entrevista personal', 'Entrevista de trabajo' respectivamente */
+
+		
+		$( ".genName").append('<label>Tu genero:</label>'); 
+		  // Agrega un título a la pregunta Male/Female 'Gender' 
+
+
+		$( ".mail" ).append('<input >'); 
+		$('.mail').children().attr('name', 'email');
+		$('.mail').children().attr('type', 'email');  
+		 /* Agrega una pregunta Email: con un input de tipo email con name email, después de last name. */
+
+		 $("form:eq(0)").attr('class', 'formu1');
+		 $("form:eq(1)").attr('class', 'formu2'); 
+		 //Agrega la clase form a ambas etiquetas de form
+
+		 
+
+
+/*
+Preguntas:
+
+Se puede determinar el orden de las etiquetas dentro del documento
+
+*/
+ 
+	</script>
+
+
+</body>
+</html>
